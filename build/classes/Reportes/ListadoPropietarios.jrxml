@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="af16b92d-fb21-47a1-97e4-8c920603c81c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     casa.`numero_casa` AS casa_numero_casa,
+     casa.`cedula_propietario` AS casa_cedula_propietario,
+     casa.`nombre` AS casa_nombre,
+     casa.`apellido` AS casa_apellido,
+FROM
+     `casa` casa]]>
+	</queryString>
+	<field name="casa_numero_casa" class="java.lang.Integer"/>
+	<field name="casa_cedula_propietario" class="java.lang.String"/>
+	<field name="casa_nombre" class="java.lang.String"/>
+	<field name="casa_apellido" class="java.lang.String"/>
+	<field name="casa_telefono" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="50" width="555" height="20" uuid="28bed7d3-cd13-4417-bdf9-7750ce633438"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft JhengHei" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Listado de Propietarios]]></text>
+			</staticText>
+			<image>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="223" height="50" uuid="3be62c2c-3450-490a-b0b2-4ead0a40d6d6"/>
+				<imageExpression><![CDATA["C:\\Users\\ARANAGA\\Documents\\Documentos Samuel\\Estudio\\Universidad\\Trayecto II\\Archivos Varios\\Logo Limpio.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="443" y="0" width="112" height="20" uuid="354aca4e-778e-4553-8f5a-297246b57821"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft JhengHei" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="3e476f20-2caf-4dfa-bcd8-3c0f64fd9f2d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Casa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="0" width="100" height="20" uuid="c20d0132-511c-498a-ba97-2d451b461df8"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Cédula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="20" uuid="a37ef260-5e20-4654-b34b-33aee96d7a49"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20" uuid="96097ab8-827e-40d3-b64c-b227ab398e0d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="4f178848-c80f-4866-bed3-241150a9bbf4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{casa_numero_casa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="0" width="100" height="20" uuid="b6260a6c-9ccb-4882-8b62-64f3f9d4d45c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{casa_cedula_propietario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="da1c5147-c21a-42d7-8c18-9f66f6b6afc7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{casa_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="4af79156-a9a0-4472-addc-bd9b2b09392f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{casa_apellido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="230" y="0" width="100" height="20" uuid="963fc143-41b1-459e-bab1-5b78c51e18ea"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>

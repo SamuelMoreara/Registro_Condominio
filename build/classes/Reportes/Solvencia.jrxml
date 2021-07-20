@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="350" orientation="Landscape" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d325e655-ee5e-4688-9fd8-fbc7448c048a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="numero_casa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Año" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Mes" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Dia" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT numero_casa, cedula_propietario, nombre, apellido FROM casa WHERE numero_casa = $P!{numero_casa}]]>
+	</queryString>
+	<field name="numero_casa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cedula_propietario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="50" width="555" height="20" uuid="c14bbeb0-25e3-475f-bc6f-d90107058849"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft JhengHei" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Solvencia de Condominio]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="443" y="0" width="112" height="20" uuid="a7c2d372-79e3-44df-acab-f790abd832c2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft JhengHei" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="223" height="50" uuid="140a7330-4544-4641-8d1a-f3088401b857"/>
+				<imageExpression><![CDATA["C:\\Users\\ARANAGA\\Documents\\Documentos Samuel\\Estudio\\Universidad\\Trayecto II\\Archivos Varios\\Logo Limpio.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="145" splitType="Stretch">
+			<textField>
+				<reportElement x="236" y="20" width="21" height="20" uuid="7ce4e951-f178-4353-a11f-140f2aa2ac40"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero_casa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="20" width="63" height="20" uuid="617c9633-80a0-40b6-8cc4-496b789efdc4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cedula_propietario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="0" width="60" height="20" uuid="6adf7f1a-1001-4005-ba52-c38951584dc5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="0" width="69" height="20" uuid="a47bece0-bda0-4881-86e8-fdf770e58c09"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="353" height="20" uuid="d8cf5245-6872-486f-8e2c-b4defd9a4d67"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[	Sirva la presente para dejar constancia que la (el) ciudadana (o)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="0" width="55" height="20" uuid="23bfdc0f-8b9d-4f18-b144-b78bc03bd702"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[titular de la]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="20" width="36" height="20" uuid="150876c0-d8ff-47a7-b348-ca9e119c1db8"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[C.I  V. -  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="20" width="130" height="20" uuid="043d3168-8a2a-4d60-b19d-20175e3522ab"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[quien reside en la casa No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="20" width="298" height="20" uuid="bc6c0700-6716-4120-a8a2-41736ce061f7"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[del condominio Bucare, del urbanismo Bosques de la Laguna]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="40" width="478" height="20" uuid="e657ff47-537f-44dc-b6c0-fca9a5c74716"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[ubicado en Maturín, estado Monagas, se encuentra solvente en el pago del condominio hasta el dia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="40" width="50" height="20" uuid="12f7ba59-8704-4265-972c-807c2e57fbb1"/>
+				<text><![CDATA[del mes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="60" width="41" height="20" uuid="f3aada70-aae9-4585-9f49-b900c58e5143"/>
+				<text><![CDATA[del año]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="99" width="197" height="20" uuid="dbae5ffa-b766-44a9-bdcd-00b8741e5cee"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[	Constancia que se expide a los]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="99" width="74" height="20" uuid="5d491920-e6d3-4bd5-a5e5-61408cfc91c2"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[días del mes de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="99" width="41" height="20" uuid="74acb653-dcb4-4150-9803-47d9754e820f"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[del año]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="125" width="555" height="20" uuid="e80fb18e-976c-40bc-87ed-6f4c43841f01"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[POR LA JUNTA DEL CONDOMINIO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="394" y="99" width="100" height="20" uuid="b702249e-06ca-47e5-8fac-11cb2a97a351"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Año}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="99" width="22" height="20" uuid="879f82d9-1610-4539-b331-db411785bef8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Dia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="99" width="70" height="20" uuid="f9fd9eb6-5afe-417a-bfe8-7959950fd698"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Mes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="60" width="100" height="20" uuid="153fc7fb-519f-4f44-af4a-9a7028cdb82d"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Año}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="494" y="40" width="10" height="20" uuid="9fd8ecb3-09e4-4a79-847b-2f7af939fee3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Dia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="60" width="18" height="20" uuid="dfa8264a-53f0-423e-aaf1-1da5ce0302af"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="34" y="60" width="70" height="20" uuid="310986fa-fa62-4a6e-9cea-cb492fc4eef0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Mes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="c3026573-f0c4-4305-809b-7ce38b6f104f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Asociación Civil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="555" height="20" uuid="3b2d3898-5570-4387-85fb-91f2d99f6146"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Condominio Bucare]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

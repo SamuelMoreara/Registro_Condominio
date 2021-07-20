@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d705c94d-5d49-4024-91c4-5859eca787eb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="8cc52473-fd61-4189-8b74-794685da43a2"/>
+	<parameter name="Año" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Mes" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM balance WHERE año = $P!{Año} AND mes = $P!{Mes}]]>
+	</queryString>
+	<field name="año" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mes" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deuda_morosa_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deuda_morosa_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deuda_actual_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deuda_actual_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_ingresos_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_ingresos_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aseo_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aseo_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vigilancia_externa_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vigilancia_externa_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vigilancia_interna_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vigilancia_interna_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_especial1_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_especial1_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_especial2_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_especial2_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_especial3_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_especial3_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_egresos_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_egresos_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldo_dolares" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldo_bolivares" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="50" width="555" height="20" uuid="e46e3447-fac6-44ad-98c7-f1017b9dc426"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft JhengHei" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance General]]></text>
+			</staticText>
+			<image>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="223" height="50" uuid="6bde0070-8856-4258-a996-a6f8077c4500"/>
+				<imageExpression><![CDATA["C:\\Users\\ARANAGA\\Documents\\Documentos Samuel\\Estudio\\Universidad\\Trayecto II\\Archivos Varios\\Logo Limpio.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="500" y="12" width="37" height="20" uuid="18dca7cf-c2eb-406b-807f-ddcb9ce27991"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{año}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="12" width="28" height="20" uuid="aadfe881-c196-47a7-bb1a-237714768d71"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{mes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="70" width="555" height="20" uuid="6a4efb9b-6ded-48ab-a586-0f114539bbee"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft JhengHei" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Condominio Bucare]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="345" y="12" width="82" height="20" uuid="56c7e7b7-ac47-4997-ba0a-b4a7d6678ed7"/>
+				<textFieldExpression><![CDATA[$P{Año}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="245" y="12" width="100" height="20" uuid="69c3314e-d335-467a-8f8c-51cf88e2b627"/>
+				<textFieldExpression><![CDATA[$P{Mes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="244" y="2" width="100" height="20" uuid="d7de8e7a-46fd-49df-a5ae-46f769905580"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ingresos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="2" width="100" height="20" uuid="36620afa-fe47-4043-924f-f145b01b1aca"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Egresos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="2" width="100" height="20" uuid="60aa3485-9636-45cc-8c95-37e1365673fc"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saldo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="3" width="146" height="20" uuid="41359c0f-a866-47d5-8c38-90b685d3d0c2"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="3" width="85" height="20" uuid="48d21c43-b28c-49db-a2e9-a35031c3e206"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="12" y="2" width="536" height="1" uuid="2ac7a1ff-f1e1-43c4-8843-7004b7babd41"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="440" splitType="Stretch">
+			<textField>
+				<reportElement x="244" y="0" width="100" height="20" uuid="1b43c116-212c-4b36-805e-9f2fbb85ef5a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{deuda_morosa_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="121" width="100" height="20" uuid="76d4644b-0f03-4b32-bbf6-32c77e7e827a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{aseo_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="399" width="100" height="20" uuid="8d0ad7c5-a836-4e7a-86ca-47c8c10395a5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{saldo_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="20" width="100" height="20" uuid="ae0d5157-55e7-4073-8917-c70cb3aca9ea"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{deuda_actual_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="40" width="100" height="20" uuid="2b7ad8c0-1885-41c9-8722-35429c4ccf82"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{total_ingresos_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="60" width="100" height="20" uuid="1248b215-fc12-4427-b533-5f2369b1d3c4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{deuda_morosa_bolivares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="80" width="100" height="20" uuid="4212bea2-c45e-4086-af9b-229e980ce607"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{deuda_actual_bolivares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="100" width="100" height="20" uuid="063a36f2-c277-4b50-b84d-7941eadf1fdf"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{total_ingresos_bolivares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="141" width="100" height="20" uuid="028ba8c4-e699-4105-a558-78c3f23284b5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{aseo_bolivares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="161" width="100" height="20" uuid="7dc3aa9a-2d6f-4f95-a544-c3cb93a4a6c3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{vigilancia_externa_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="181" width="100" height="20" uuid="cb3ad7b2-daa9-4491-aaea-6be4688568eb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{vigilancia_externa_bolivares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="201" width="100" height="20" uuid="96d6e427-3d82-4b1d-b623-4e3a4155f95c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{vigilancia_interna_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="221" width="100" height="20" uuid="74eef307-67ad-4f71-b56d-7bea2f5b93ca"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{vigilancia_interna_bolivares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="240" width="100" height="20" uuid="6858ae93-d60c-46c6-aa5b-6d7ff4439faa"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cuota_especial1_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="260" width="100" height="20" uuid="6aeb6bbf-3b07-4840-b01a-5b7e6d335099"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cuota_especial1_bolivares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="280" width="100" height="20" uuid="a70b70ee-4ecc-492f-a38e-6fa05b98ae31"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cuota_especial2_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="300" width="100" height="20" uuid="5e45d6cf-7628-4597-92f3-b95a6439e68f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cuota_especial2_bolivares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="320" width="100" height="20" uuid="ac2ce3ec-ce33-4385-8f8f-b9ff885d658f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cuota_especial3_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="340" width="100" height="20" uuid="6d9b2b75-49d9-4e02-a60c-0a39e9908be7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cuota_especial3_bolivares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="360" width="100" height="20" uuid="68c5e7be-6ace-443d-bd43-ba067b30b8ca"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{total_egresos_dolares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="380" width="100" height="20" uuid="966fd816-4758-4633-85a2-80b6550aa937"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{total_egresos_bolivares}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="419" width="100" height="20" uuid="34074659-1a13-4187-a255-de5064143ca9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{saldo_bolivares}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="344" y="-22" width="1" height="462" uuid="ed5689bd-3eae-472d-84c3-6c956be0ea4a"/>
+			</line>
+			<line>
+				<reportElement x="444" y="-22" width="1" height="461" uuid="05224a45-bb7d-4a5a-8a9c-904fd4e2a590"/>
+			</line>
+			<line>
+				<reportElement x="11" y="120" width="533" height="1" uuid="a6475461-7d85-4e5a-bc49-7815b8b57bfc"/>
+			</line>
+			<line>
+				<reportElement x="9" y="1" width="536" height="1" uuid="1ff23579-23dc-4e2a-9151-44d1db073dd9"/>
+			</line>
+			<line>
+				<reportElement x="12" y="398" width="533" height="1" uuid="6b42c00f-8c16-4c05-8746-c30e8a28f0e3"/>
+			</line>
+			<staticText>
+				<reportElement x="12" y="40" width="85" height="20" uuid="ab5660ee-8614-4eca-bd53-e0623f968fbe"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Ingresos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="240" width="85" height="20" uuid="fe508574-95a5-47e9-aa51-a4baab4529b7"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Egresos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="409" width="85" height="20" uuid="821b6b79-f3ce-46e0-b094-f172b289782d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Saldo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="2" width="145" height="20" uuid="1e5cebc5-c1a8-4985-9026-baadf179599f"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Por Deuda Morosa             ($)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="20" width="145" height="20" uuid="615b8ac5-7756-4596-bb6c-7ba8a295a37c"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Por Deuda Actual              ($)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="12" y="-22" width="1" height="461" uuid="5e529150-9169-4e97-9e5d-ee8ec382a6d3"/>
+			</line>
+			<line>
+				<reportElement x="244" y="-22" width="1" height="461" uuid="8ed52e46-d0da-4933-a889-a085649330e9"/>
+			</line>
+			<line>
+				<reportElement x="547" y="-22" width="1" height="461" uuid="d7446585-6c5a-4e7e-bd05-e8e1c5eff471"/>
+			</line>
+			<staticText>
+				<reportElement x="98" y="40" width="145" height="20" uuid="dd1ed782-560f-4780-9f77-9361f3611c14"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Total Ingresos                    ($)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="60" width="145" height="20" uuid="1897d5eb-a1b1-4522-9810-45a888c2518f"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Por Deuda Morosa            (Bs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="80" width="145" height="20" uuid="cd2a7dbe-8c8b-43ff-b6a3-8bc298fd1457"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Por Deuda Actual             (Bs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="100" width="145" height="20" uuid="3724161d-7601-4337-9071-0244b1293336"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Total Ingresos                   (Bs)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="96" y="-22" width="1" height="461" uuid="0fa0ac56-c916-4253-bdfb-ae5aa2b3012a"/>
+			</line>
+			<staticText>
+				<reportElement x="100" y="121" width="145" height="20" uuid="4f8c0665-8852-424c-a69c-59afecf7e908"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Aseo			 ($)	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="141" width="145" height="20" uuid="22ed4c64-bed9-4853-812f-556661d943ed"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[			(Bs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="181" width="145" height="20" uuid="2a09c766-0448-4a59-b294-6b172925cc69"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[			(Bs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="161" width="145" height="20" uuid="25db3f06-3f3b-4c8e-ba8a-23310709abc5"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Vigilancia Interna             ($)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="240" width="145" height="20" uuid="99c49be0-1d50-4615-9c64-53fdd3ab74cd"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Cuota Especial 1              ($)	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="260" width="145" height="20" uuid="1bdfe702-4b8a-4da8-a078-6d6c4dd60a07"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[			(Bs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="220" width="145" height="20" uuid="9492bd8f-13f9-4d19-af4c-80d781a2456e"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[			(Bs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="200" width="145" height="20" uuid="164fa045-dc3c-4ddf-be2d-4d7bd873d3c8"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Vigilancia Externa            ($)	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="320" width="145" height="20" uuid="4904c361-44cb-4f84-af08-0582f8175989"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Cuota Especial 3              ($)	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="399" width="145" height="20" uuid="496add74-f2fe-441a-b1e2-aa87f0dce56e"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Saldo			 ($)	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="419" width="145" height="20" uuid="40bc772f-8f62-4b41-bd36-4e510831f1ff"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[			(Bs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="359" width="145" height="20" uuid="6cf4182a-7448-44bf-94d0-65e9d37cd5ff"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Total Egresos                    ($)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="340" width="145" height="20" uuid="6361e700-2604-40c5-8d99-b977b4ea049f"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[			(Bs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="379" width="145" height="20" uuid="d8d10560-b34b-4ffe-8a52-8804d0da37f3"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[			(Bs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="300" width="145" height="20" uuid="875b953a-4b5e-4ce3-a08c-50764ce0b5de"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[			(Bs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="280" width="145" height="20" uuid="25f5c0d7-12b0-4227-9c3a-2d50a8fe9727"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Cuota Especial 2              ($)	]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="12" y="0" width="533" height="1" uuid="228f701b-e3c2-4f01-b59c-4869ed3768bf"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
